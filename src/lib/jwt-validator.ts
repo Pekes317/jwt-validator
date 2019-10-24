@@ -10,7 +10,7 @@ export const JwtValidator = (options: Options) => {
   const opts = options;
 
   return {
-    getKeys: async () => {
+    getKey: async () => {
       const token = jwt.decode(opts.jwt, { complete: true });
       const header = token && typeof token === 'object' && token.header;
       const res = await fetch(opts.jwksUri).catch(err =>
@@ -26,9 +26,27 @@ export const JwtValidator = (options: Options) => {
       return publicKey;
     },
     verifyToken: async () => {
-      const publicSecret = '';
+      const publicSecret = await JwtValidator(opts).getKey();
 
-      return publicSecret;
+      return new Promise((resolve, reject) => {
+        jwt.verify(
+          opts.jwt,
+          publicSecret,
+          opts.verifyOptions,
+          (err, decoded) => {
+            // tslint:disable-next-line: no-if-statement
+            if (err) {
+              // tslint:disable-next-line: no-expression-statement
+              Logger.error('Validation Failed', err);
+              // tslint:disable-next-line: no-expression-statement
+              reject(err);
+            }
+
+            // tslint:disable-next-line: no-expression-statement
+            resolve(decoded);
+          }
+        );
+      });
     }
   };
 };
