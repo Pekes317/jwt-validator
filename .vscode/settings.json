@@ -1,5 +1,16 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#885aeb",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#722d0e",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "statusBar.background": "#672ce6",
+    "statusBarItem.hoverBackground": "#885aeb",
+    "statusBar.foreground": "#e7e7e7"
+  },
+  "peacock.color": "#672ce6"
   // "typescript.implementationsCodeLens.enabled": true
   // "typescript.referencesCodeLens.enabled": true
 }

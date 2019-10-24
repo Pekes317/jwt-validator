@@ -1,3 +1,3 @@
-# jwt-validator
+# JWT-Validator
 
-A Lightweight JWT  Validator for use with AWS Lambda@Edge
+A Lightweight JWT Validator for use with AWS Lambda@Edge
