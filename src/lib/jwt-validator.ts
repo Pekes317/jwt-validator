@@ -17,7 +17,7 @@ export const JwtValidator = (options: Options) => {
         Logger.error('Was not able to get keys', err)
       );
       const rsaKeys = res && (await res.json());
-      const keys = rsaKeys && (rsaKeys.key as readonly Key[]);
+      const keys = rsaKeys && (rsaKeys.keys as readonly Key[]);
 
       const signingKey = keys.find(key => key.kid === header.kid);
       const cert = signingKey && signingKey.x5c[0];
