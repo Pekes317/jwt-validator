@@ -6,6 +6,7 @@
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": "https://github.com/Pekes317/jwt-validator",
+  "homepage": "https://pekes317.github.io/jwt-validator/",
   "license": "MIT",
   "keywords": [
     "JWT"
